@@ -1,4 +1,4 @@
-// Mirrors the mini-jarvis backend DTOs (web/Dtos.java, web/ApiError.java, security/AuthController.java).
+// Mirrors the mini-jarvis-ai-agent backend DTOs (web/Dtos.java, web/ApiError.java, security/AuthController.java).
 // Java `Instant` fields are serialised by Jackson as ISO-8601 strings.
 
 export type RiskLevel = 'LOW' | 'MEDIUM' | 'HIGH'

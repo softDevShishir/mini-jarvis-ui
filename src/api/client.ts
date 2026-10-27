@@ -74,7 +74,7 @@ export function createApiClient(options: ApiClientOptions) {
           timestamp: new Date().toISOString(),
           status: 0,
           error: 'Network Error',
-          message: 'Cannot reach the mini-jarvis server. Is the backend running?',
+          message: 'Cannot reach the Mini Jarvis AI Agent server. Is the backend running?',
           path,
         },
         false,

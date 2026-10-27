@@ -10,7 +10,7 @@ export function Layout() {
       </a>
       <header className="app-header">
         <div className="app-header-inner">
-          <span className="brand">mini-jarvis</span>
+          <span className="brand">Mini Jarvis AI Agent</span>
           <nav aria-label="Main">
             <ul className="nav-list">
               <li>

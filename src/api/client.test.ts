@@ -71,6 +71,6 @@ describe('api client', () => {
 
     const error = await api.getAuditLog(50).catch((e: unknown) => e)
     expect(error).toBeInstanceOf(ApiRequestError)
-    expect(describeError(error)).toMatch(/Cannot reach the mini-jarvis server/)
+    expect(describeError(error)).toMatch(/Cannot reach the Mini Jarvis AI Agent server/)
   })
 })

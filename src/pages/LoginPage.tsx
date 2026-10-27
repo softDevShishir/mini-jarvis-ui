@@ -37,7 +37,7 @@ export function LoginPage() {
   return (
     <main className="login-page">
       <div className="card login-card">
-        <h1 className="login-title">mini-jarvis</h1>
+        <h1 className="login-title">Mini Jarvis AI Agent</h1>
         <p className="muted">Sign in to review AI recommendations. Agents only advise; every decision is yours.</p>
         {notice && (
           <div className="banner banner-info" role="status">
