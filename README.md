@@ -82,12 +82,37 @@ The dev proxy does not exist in production, so the browser has to reach the API 
 
 ## Screenshots
 
-_Placeholder: add screenshots here._
+The screenshots use the demo data of a fictional business.
 
-- Login
-- Dashboard (provider status and an agent run result)
-- Recommendations (pending, with the approve dialog)
-- Audit log
+### Login
+
+The sign-in page, with the product overview beside the form.
+
+![Login page](docs/screenshots/login.png)
+
+### Dashboard
+
+AI provider status, the agent run form and the result of a cash-flow agent run.
+
+![Dashboard](docs/screenshots/dashboard.png)
+
+### Recommendations
+
+Pending recommendations, each with its reason, suggested action and Approve / Reject buttons.
+
+![Pending recommendations](docs/screenshots/recommendations.png)
+
+### Approved recommendation
+
+An approved recommendation, showing who approved it, when, and their comment.
+
+![Approved recommendation](docs/screenshots/approve.png)
+
+### Audit log
+
+Every agent run, AI call, recommendation and decision, newest first.
+
+![Audit log](docs/screenshots/audit-log.png)
 
 ## Project layout
 
