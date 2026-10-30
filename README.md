@@ -1,6 +1,6 @@
 # mini-jarvis-ai-agent-ui
 
-A React frontend for [mini-jarvis-ai-agent](../mini-jarvis-ai-agent), an **advisory-only**, human-in-the-loop AI agent service.
+A React frontend for [mini-jarvis-ai-agent](https://github.com/softDevShishir/mini-jarvis-ai-agent), an **advisory-only**, human-in-the-loop AI agent service.
 
 mini-jarvis-ai-agent agents read business data and ask an AI provider (Claude, Gemini or OpenAI) for recommendations. Every recommendation is created as `PENDING`. A human approves or rejects it, and every step is written to an audit log. This UI lets you:
 
@@ -21,6 +21,8 @@ Built with React 19, TypeScript, Vite 8 and react-router-dom, with plain CSS and
 1. **Start the backend first** (in the sibling folder, see its README for the `.env` it needs):
 
    ```bash
+   # clones the backend next to this folder; skip if it's already there
+   git clone git@github.com:softDevShishir/mini-jarvis-ai-agent.git ../mini-jarvis-ai-agent
    cd ../mini-jarvis-ai-agent
    cp .env.example .env   # set JWT_SECRET, ADMIN_PASSWORD and at least one AI key
    docker compose up --build
@@ -76,7 +78,7 @@ Build with `npm run build` and serve `dist/` from any static host. Configure the
 The dev proxy does not exist in production, so the browser has to reach the API in one of two ways:
 
 1. **Same domain (recommended).** Serve the frontend and the API from one origin, for example with a reverse proxy that sends `/api/*` to the Spring Boot app and everything else to `dist/`. Leave `VITE_API_BASE_URL` empty. No CORS is needed.
-2. **Separate domains.** Set `VITE_API_BASE_URL` at build time to the API origin (see `.env.example`), e.g. `VITE_API_BASE_URL=https://api.example.com npm run build`. The backend must then send CORS headers that allow **only the frontend's exact address** (for example `https://jarvis.example.com`) for the `Authorization` and `Content-Type` headers on `GET`/`POST`. Never use a wildcard origin. mini-jarvis-ai-agent does not configure CORS today, so this needs a backend change.
+2. **Separate domains.** Set `VITE_API_BASE_URL` at build time to the API origin (see `.env.example`), e.g. `VITE_API_BASE_URL=https://api.example.com npm run build`. The backend must then send CORS headers that allow **only the frontend's exact address** (for example `https://jarvis.example.com`) for the `Authorization` and `Content-Type` headers on `GET`/`POST`. Never use a wildcard origin. mini-jarvis-ai-agent supports this through the `CORS_ALLOWED_ORIGINS` setting (comma-separated exact origins; empty means CORS is off); see its [README](https://github.com/softDevShishir/mini-jarvis-ai-agent#readme).
 
 `VITE_*` variables are compiled into the public JavaScript bundle. Never put secrets in them.
 
